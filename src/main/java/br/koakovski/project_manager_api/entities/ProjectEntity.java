@@ -29,20 +29,17 @@ public class ProjectEntity {
 
     @Column(name = "start_date", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private String startDate;
+    private Date startDate;
 
     @Column(name = "end_date", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date endDate;
 
     @Column(name = "hours", nullable = false)
-    private Date hours;
+    private Integer hours;
 
     @Column(name = "artifact", nullable = false)
     private String artifact;
-
-    @Column(name = "address_id", nullable = false)
-    private Integer addressId;
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
