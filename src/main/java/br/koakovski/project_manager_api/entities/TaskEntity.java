@@ -33,7 +33,7 @@ public class TaskEntity {
 
     @Column(name = "start_date", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private String startDate;
+    private Date startDate;
 
     @Column(name = "end_date", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
