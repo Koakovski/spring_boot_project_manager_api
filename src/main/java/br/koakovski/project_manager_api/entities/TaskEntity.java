@@ -40,7 +40,7 @@ public class TaskEntity {
     private Date endDate;
 
     @Column(name = "hours", nullable = false)
-    private Date hours;
+    private Integer hours;
 
     @Column(name = "user_id", nullable = false)
     private Integer userId;
