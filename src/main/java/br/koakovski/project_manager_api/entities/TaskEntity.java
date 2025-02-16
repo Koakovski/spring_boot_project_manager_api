@@ -7,8 +7,11 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -59,13 +62,15 @@ public class TaskEntity {
     private Date updatedAt;
 
     // RELATIONS
-    @ManyToOne
+    @ManyToOne( fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", insertable = false, updatable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
     private UserEntity user;
 
-    @ManyToOne
+    @ManyToOne( fetch = FetchType.LAZY)
     @JoinColumn(name = "project_id", insertable = false, updatable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
     private ProjectEntity project;
 }
